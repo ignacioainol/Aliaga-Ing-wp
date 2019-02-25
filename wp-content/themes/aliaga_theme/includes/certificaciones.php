@@ -1,15 +1,14 @@
 <?
 
-$args = array(
-  'numberposts' => 1,
-  'category_name' => 'certificaciones',
-  'order' => 'ASC' );
-$postHeadCert = get_posts( $args );
+global $post;
+$args = array( 'category_name' => 'certificaciones' );
+$posts = get_posts( $args );
 
 ?>
 
 <!-- Paralax Effect Section -->
-<? foreach($postHeadCert as $key => $post):  setup_postdata($post); ?>
+<? foreach($posts as $key => $post):  setup_postdata($post); ?>
+  <? if($post->ID == "32"): ?>
   <? $urlImage = wp_get_attachment_url( get_post_thumbnail_id($post->ID), 'thumbnail' ); ?>
   <div style="position:relative;">
     <section id="bg-paralax2" style="background: url(<?= $urlImage ?>)">
@@ -23,61 +22,35 @@ $postHeadCert = get_posts( $args );
       </div>
     </section>
   </div>
+  <? endif ?>
 <? endforeach ?>
 	
 	
 <section class="section-padding padding">
 <div class="container">
 <div class="row">
-<div class="col-md-12 text-center">
-<p class="title">Nuestras</p>
- <h2 class="heading">Certificaciones</h2>
-</div>
-<div class="col-md-12">
-<div class="pricing pricing_tenzin">
-                <div class="pricing_item dark_gray">
-                    <h3 class="pricing_title">Servicio de Agua Alta Presión</h3>
-                    <div class="pricing_price"></div>
-                   
-                    <ul class="pricing_list">
-                        <li class="pricing_feature">Operadores certificados por la Marca Gardner Denver</li>
-                        <li class="pricing_feature">Operadores certificados por la Marca JETSTREAM</li>
+  <div class="col-md-12 text-center">
+  <p class="title">Nuestras</p>
+    <h2 class="heading">Certificaciones</h2>
+  </div>
 
-                    </ul>
-                  
-                </div>
-					
-                <div class="pricing_item active">
-                    <h3 class="pricing_title">Servicios de riles y succión</h3>
-                    <div class="pricing_price"></div>
-              
-                    <ul class="pricing_list">
-                        <li class="pricing_feature">Traslado de Materiales peligrosos y NO peligrosos, Servicio de Salud</li>
-                        <li class="pricing_feature">Operadores de Materiales Peligrosos, Emergency Responce Training TTCI, Texas EEUU</li>
-                        <li class="pricing_feature">Comandantes de Incidentes, Emergency Responce Training (TTCI), Texas EEUU</li>
-                    </ul>
-                  
-                 
-                </div>
-                <div class="pricing_item dark_gray">
-                    <h3 class="pricing_title">Servicio Mecánicos</h3>
-                    <div class="pricing_price"></div>
-                   
-                    <ul class="pricing_list">
-                        <li class="pricing_feature">Universidad de Santiago, Ingeniero Ejecución Eléctrica</li>
-                        <li class="pricing_feature">Inacap, 2 trabajadores como Supervisores mecánicos</li>
-                        <li class="pricing_feature">Inacap, 1 Técnico Nivel Superior Mecánico
-</li>
-                        <li class="pricing_feature">Inacap, 1 Técnico Electromecánico</li>
-                        <li class="pricing_feature">Inacap, 2 Operador Maquinaria Pesada</li>
-                        <li class="pricing_feature">Operador Pruebas Hidráulicas, certificado por el servicio nacional de salud</li>
-                    </ul>
-                   
-                   
-                </div>
-            </div>
-</div>
-</div>
+
+  <? foreach(array_reverse($posts) as $key => $post): setup_postdata($post); ?>
+    <? if($post->ID != "32"): ?>
+    <div class="col-md-4">
+      <div class="pricing pricing_tenzin">
+        <div class="pricing_item <?= $key%2 ? 'dark_gray' : 'active' ?>"><!-- dark_gray -->
+          <h3 class="pricing_title"><?= get_the_title() ?></h3>
+          <div class="pricing_price"></div>
+    		      <ul class="pricing_list" style="min-height: 350px">
+                  <?= get_the_content() ?>
+              </ul>
+        </div>
+      </div>
+    </div>
+    <? endif ?>
+  <? endforeach ?>
+  </div>
 </div>
             
 </section>	

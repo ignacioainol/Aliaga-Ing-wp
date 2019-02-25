@@ -35,7 +35,6 @@ $recent_posts = wp_get_recent_posts( $argsLast, $output );
           <div class="col-md-12 text-left top-padding">
             <h2><?= mb_strtoupper(get_the_title()) ?></h2>
             <h5><?= get_the_content(); ?></h5>
-          <?= $urlImage ?>
           </div>
         </div>
       </div>
@@ -86,9 +85,9 @@ $recent_posts = wp_get_recent_posts( $argsLast, $output );
         <h5 class="hidden">hiddens</h5>
         <p class="pull-left">Descargue nuestra carta y presentación 2019</p>
         
-        <a class="pull-right bounce-top" href="files/Presentacion_Ingenieria_Aliaga_2019.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> Descargar Presentaci&oacute;n</a> 
+        <a class="pull-right bounce-top" href="<?= bloginfo('template_url') ?>/files/Presentacion_Ingenieria_Aliaga_2019.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> Descargar Presentaci&oacute;n</a> 
         
-        <a class="pull-right bounce-top" href="files/carta_presentacion_ing.aliaga anio 2019_2.pdf" style="margin-right:1em" target="_blank"><i class="fa fa-file-pdf-o"></i> Descargar Carta</a>
+        <a class="pull-right bounce-top" href="<?= bloginfo('template_url') ?>/files/carta_presentacion_ing.aliaga anio 2019_2.pdf" style="margin-right:1em" target="_blank"><i class="fa fa-file-pdf-o"></i> Descargar Carta</a>
         </div>
     </div>
   </div>
