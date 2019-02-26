@@ -42,11 +42,6 @@ $recent_posts = wp_get_recent_posts( $argsLast, $output );
   </div>
 <? endforeach ?>
 
-<?
-// echo "<pre>";
-// print_r($recent_posts);
-
- ?>
   
 <!-- NOSOTROS MISION VISION --> 
 <section class="section-padding" id="about">

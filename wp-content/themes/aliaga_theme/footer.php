@@ -6,14 +6,14 @@
       <div class="col-md-12 text-center">
         <ul class="breadcrumb">
           <li><a href="index.html" class="page-scroll">Home</a></li>
-          <li><a href="nosotros.html" class="page-scroll">Empresa</a></li>
-          <li><a href="servicios.html" class="page-scroll">Servicios</a></li>
-      <li><a href="equipos.html" class="page-scroll">Equipos</a></li>
-          <li><a href="certificaciones.html" class="page-scroll">Certificaciones</a></li>
-          <li><a href="#contact" class="page-scroll">Contacto</a></li>
+          <li><a href="nosotros" class="page-scroll">Empresa</a></li>
+          <li><a href="servicios" class="page-scroll">Servicios</a></li>
+      <!-- <li><a href="equipos.html" class="page-scroll">Equipos</a></li> -->
+          <li><a href="certificaciones" class="page-scroll">Certificaciones</a></li>
+          <li><a href="index.php#contact" class="page-scroll">Contacto</a></li>
         </ul>
         <p>Copyright &copy; 2018-2019 Ingeniería Aliaga LTDA. All rights reserved.</p>
-      <p>Desarrollado por Proyectame Informática Chile.</p>
+      <p>Desarrollado por <a href="https://www.cyrax.cl" target="_blank">Cyrax.</a></p>
       </div>
     </div>
   </div>

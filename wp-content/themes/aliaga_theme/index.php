@@ -110,7 +110,7 @@ $posts = get_posts( $args );
         <? if($post->ID != "66"): ?>
           <? $gallery = get_post_gallery_images() ?>
           <div class="col-md-3 col-sm-3 wow fadeInUp zoomIn" data-wow-duration="500ms" data-wow-delay="300ms"> 
-           <a href="includes/equipos.php#equipos-altapresion"><h4><?= get_the_title() ?></h4></a>
+           <a href="equipos#<? if($post->ID == '106'){ echo 'equipos-altapresion';}else if($post->ID == '114'){ echo 'camiones-desobstructores';}else if($post->ID == '118'){ echo 'arriendo-de-camion-gruas';}else if($post->ID == '122'){ echo 'enami';} ?>"><h4><?= get_the_title() ?></h4></a>
               <? foreach($gallery as $key => $imagen): ?>
               <div class="thinker-wrap">
                   <div class="thinker-image">

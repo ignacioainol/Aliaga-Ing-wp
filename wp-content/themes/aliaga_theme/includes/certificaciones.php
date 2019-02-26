@@ -1,7 +1,7 @@
 <?
 
 global $post;
-$args = array('numberposts' => 15, 'category_name' => 'certificaciones' );
+$args = array('numberposts' => 20, 'category_name' => 'certificaciones' );
 $posts = get_posts( $args );
 
 ?>
