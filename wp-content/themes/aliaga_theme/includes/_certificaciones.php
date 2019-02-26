@@ -1,7 +1,7 @@
 <?
 
 global $post;
-$args = array('numberposts' => 15, 'category_name' => 'certificaciones' );
+$args = array( 'category_name' => 'certificaciones' );
 $posts = get_posts( $args );
 
 ?>
@@ -34,7 +34,7 @@ $posts = get_posts( $args );
     <? if($post->ID != "32" && $post->ID <= "134"): ?>
     <div class="col-md-4">
       <div class="pricing pricing_tenzin">
-        <div class="pricing_item <?= $key%2 ? 'dark_gray' : 'active' ?>"><!-- dark_gray -->
+        <div class="pricing_item <?= $key%2 ? 'active' : 'dark_gray' ?>"><!-- dark_gray -->
           <h3 class="pricing_title"><?= get_the_title() ?></h3>
           <div class="pricing_price"></div>
               <ul class="pricing_list" style="min-height: 350px">
