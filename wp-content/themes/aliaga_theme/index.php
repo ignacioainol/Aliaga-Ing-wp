@@ -153,21 +153,26 @@ $posts = get_posts( $args );
       <div class="center">
         <p class="title"></p>
         <h2>Escríbanos</h2>
-       <form class="form-inline" id="contact-form" onSubmit="return false">
+        <div id="messageError"></div>
+       <form class="form-inline" id="formContact" action="<?php bloginfo('template_url') ?>/includes/sendemail.php" method="post">
           <div class="row">
-            <div class="col-md-12 center"><div id="result"></div> </div>
+            <div class="col-md-12 center"><div id="messageForm"></div> </div>
           </div>
-          
+          <input type="hidden" value="sendmail" name="sendmail">
           <div class="row">
             <div class="col-md-6 col-sm-12 col-xs-12 form-group">
-              <input type="text" class="form-control"  placeholder="Nombre Apellidos" name="name" id="name" required>
+              <input type="text" class="form-control"  placeholder="Nombre Apellidos" name="nombre" id="nombre" required>
             </div>
             <div class="col-md-6 col-sm-12 col-xs-12 form-group">
               <input type="email" class="form-control"  placeholder="E-mail " name="email" id="email" required>
             </div>
             <div class="col-xs-12 col-md-12">
-              <textarea placeholder="Message..." class="form-control" name="Mensaje" id="message"></textarea>
-              <button type="submit" class="btn-black btn-blue bounce-green" id="btn_submit"> Enviar</button>
+              <textarea placeholder="Message..." class="form-control" name="mensaje" id="mensaje"></textarea>
+              <button type="submit" class="btn-black btn-blue bounce-green" id="btn_submitx"> Enviar</button>
+
+              <div id="loadgif" style="display: none">
+                <img src="<?php bloginfo('template_url') ?>/images/eclipse-load.gif" alt="">
+              </div>
             </div>
           </div>
         </form>

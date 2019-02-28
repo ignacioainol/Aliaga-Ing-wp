@@ -39,6 +39,46 @@
 <script src="<?php bloginfo('template_url') ?>/js/jquery.fancybox-media.js"></script>
 <script src="<?php bloginfo('template_url') ?>/js/jPushMenu.js"></script>
 <script src="<?php bloginfo('template_url') ?>/js/functions.js"></script>
+<script>
+  $('document').ready(function(){
+    $('#formContact').unbind('submit').bind('submit',function(){
+      var form = $(this);
+
+
+      $.ajax({
+        url: form.attr('action'),
+        type: form.attr('method'),
+        data: form.serialize(),
+        dataType: 'json',
+        beforeSend: function(){
+          $('#nombre').attr('readonly',true);
+          $('#email').attr('readonly',true);
+          $('#mensaje').attr('readonly',true);
+          $('#loadgif').show();
+          $('#btn_submitx').hide();
+        },
+        success: function(response){
+            $('#nombre').attr('readonly',false);
+              $('#email').attr('readonly',false);
+              $('#mensaje').attr('readonly',false);
+              $('#loadgif').hide();
+              $('#btn_submitx').show();
+
+            if(response.success == true){
+              $('#messageError').addClass('alert alert-success').html(response.message);
+              $('#messageError').show();
+              
+            }else{
+              $('#messageError').addClass('alert alert-warning').html(response.errorMessage);
+                
+            }
+        }
+      })
+
+      return false;
+    })
+  })
+</script>
   
 </body>
 </html>
