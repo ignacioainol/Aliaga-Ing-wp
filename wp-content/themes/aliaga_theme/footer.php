@@ -58,7 +58,10 @@
           $('#btn_submitx').hide();
         },
         success: function(response){
-            $('#nombre').attr('readonly',false);
+          if($('#messageError').hasClass('alert-warning')){
+            $('#messageError').removeClass('alert-warning');
+          }
+              $('#nombre').attr('readonly',false);
               $('#email').attr('readonly',false);
               $('#mensaje').attr('readonly',false);
               $('#loadgif').hide();
